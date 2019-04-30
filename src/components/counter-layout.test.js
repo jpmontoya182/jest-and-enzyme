@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import App from './App';
+import CounterLayout from './counter-layout';
 
 /**
  * Factory function to create a ShallowWrapper for the app component
@@ -9,7 +9,7 @@ import App from './App';
  * @returns {ShallowWrapper}
  */
 const setup = (props = {}, state = null) => {
-	const wrapper = shallow(<App {...props} />);
+	const wrapper = shallow(<CounterLayout {...props} />);
 	if (state) {
 		wrapper.setState(state);
 	}
