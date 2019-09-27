@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import CounterLayout from '../components/counter-layout';
 
 class Counter extends Component {
 	constructor(props) {
@@ -21,7 +20,6 @@ class Counter extends Component {
 	handleClickDecrement = () => {
 		console.log(this.state.counter);
 		if (this.state.counter === 0) {
-			console.log('ingreso');
 			this.setState({
 				message: "counter can't go below zero"
 			});
@@ -36,12 +34,16 @@ class Counter extends Component {
 		const { counter, message } = this.state;
 
 		return (
-			<CounterLayout
-				message={message}
-				counter={counter}
-				handleClickIncrement={this.handleClickIncrement}
-				handleClickDecrement={this.handleClickDecrement}
-			/>
+			<div data-test="component-app">
+				<h4 data-test="message-area">{message}</h4>
+				<h1 data-test="counter-display">The counter us currently {counter}</h1>
+				<button data-test="increment-button" onClick={this.handleClickIncrement} className="btn">
+					Increment
+				</button>
+				<button data-test="decrement-button" onClick={this.handleClickDecrement} className="btn">
+					Decrement
+				</button>
+			</div>
 		);
 	}
 }

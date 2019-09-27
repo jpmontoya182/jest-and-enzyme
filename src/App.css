@@ -1,8 +1,25 @@
 body {
 	padding: 5px;
 }
-
 button {
 	padding: 5px;
 	border-radius: 2px;
+}
+.btn {
+	padding: 6px;
+	border: 1px solid #d5d8dc;
+	border-radius: 5px;
+	margin-right: 2px;
+	margin-left: 2px;
+}
+.btn-primary {
+	color: black;
+	background-color: #85c1e9;
+	border-color: #5dade2;
+}
+a.btn {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: none;
 }
