@@ -1,15 +1,16 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import Counter from './containers/Counter';
+import Home from './containers/Home';
 
-class App extends Component {
-	render() {
-		return (
-			<div data-test="component-app">
-				<h1 data-test="counter-display">The counter us currently</h1>
-				<button data-test="increment-button">Increment</button>
-			</div>
-		);
-	}
-}
+const App = () => {
+	return (
+		<Router>
+			<Route path="/" exact component={Home} />
+			<Route path="/counter" exact component={Counter} />
+		</Router>
+	);
+};
 
 export default App;
